@@ -1,0 +1,157 @@
+@import "../../../css-config/mixins.scss";
+
+.hero-banner {
+    padding: 40px 0;
+    position: relative;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+
+    // height: 500px;
+    @include md {
+        height: calc(100vh - 400px);
+    }
+
+    @include lg {
+        height: calc(100vh - 80px);
+    }
+
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        position: relative;
+
+        @include md {
+            flex-direction: row;
+            max-width: 1100px;
+            justify-content: space-between;
+        }
+
+        .banner-img {
+            position: relative;
+            z-index: 9;
+            width: 150px;
+            margin-bottom: 20px;
+            // height: 660px;
+            height: 220px;
+
+            @include md {
+                height: 400px;
+                width: 300px;
+                margin-right: 20px;
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+
+            @include lg {
+                height: 400px;
+                width: 350px;
+                margin-right: 60px;
+                margin-top: 30px;
+                margin-bottom: 0;
+            }
+
+            @include xxl {
+                height: 660px;
+                width: 600px;
+                margin-right: 0;
+                margin-top: 0;
+
+            }
+        }
+
+        .text-content {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include md {
+                position: relative;
+                left: 20px;
+                top: 10%;
+                transform: translateY(-20px);
+            }
+
+            @include lg {
+                position: relative;
+                left: 50px;
+                top: 30%;
+                transform: translateY(-80px);
+            }
+
+            @include xl {
+                top: 20%;
+            }
+
+            @include xxl {
+                top: 20%;
+                left: -0;
+            }
+
+            h1 {
+                font-size: 60px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 20px;
+
+                @include md {
+                    font-size: 120px;
+                }
+
+                @include lg {
+                    font-size: 150px;
+                }
+            }
+
+            p {
+                max-width: 300px;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 20px;
+
+                @include md {
+                    max-width: 400px;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 40px;
+                }
+
+                @include lg {
+                    max-width: 500px;
+                }
+            }
+
+            .ctas {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                .banner-cta {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 500;
+                    // width: fit-content;
+                    border: 2px solid white;
+                    padding: 10px 20px;
+                    cursor: pointer;
+
+                    &.v2 {
+                        background-color: white;
+                        color: black;
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

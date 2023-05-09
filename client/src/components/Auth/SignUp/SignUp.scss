@@ -1,0 +1,187 @@
+.container {
+    width: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+
+    .img {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media screen and (max-width: 900px) {
+
+            display: none;
+
+        }
+    }
+
+    .img img {
+        width: 500px;
+        height: 450px;
+
+        @media screen and (max-width:1000px) {
+            width: 400px;
+        }
+
+    }
+
+    .login-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        form {
+            width: 360px;
+
+            .avatar {
+                width: 100px;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+                text-transform: uppercase;
+                margin: 25px 0;
+                color: #333;
+
+                @media screen and (max-width:1000px) {
+                    // margin: 8px 0;
+                    font-size: 2.0rem;
+                    margin: revert;
+                }
+            }
+
+            .input-div {
+                position: relative;
+                display: grid;
+                grid-template-columns: 7% 93%;
+                margin: 25px 0;
+                padding: 5px 0;
+                border-bottom: 2px solid #8e2de2;
+
+                .i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #8e2de2;
+                    top: 8px;
+                    transition: .3s;
+                }
+
+                div {
+                    position: relative;
+                    height: 45px;
+                }
+
+                div h5 {
+                    position: absolute;
+                    top: 30px;
+                    transform: translateY(-30%);
+                    // color: #999;
+                    font-size: 18px;
+                }
+
+                .input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 5px;
+                    left: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    padding: 0.5rem 0.7rem;
+                    font-size: 1.2em;
+                    color: #555;
+
+                }
+
+                div h5 {
+                    left: -16px;
+                    top: -3px;
+                    font-size: 15px;
+                }
+            }
+
+            .input-div.one {
+                margin-top: 0;
+            }
+
+            .input-div.two {
+                margin-bottom: 4px;
+            }
+
+            p {
+                display: block;
+                text-align: right;
+                text-decoration: underline;
+                color: #999;
+                font-size: 0.8.5rem;
+                cursor: pointer;
+                transition: .3s;
+
+                // span {
+                //     text-decoration: underline;
+                //     font-size: 0.9rem;
+                //     color: rgb(106, 102, 102);
+                //     cursor: pointer;
+
+                &:hover {
+                    color: #8e2de2;
+                }
+
+                // }
+
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                height: 50px;
+                border-radius: 25px;
+                margin: 1rem 0;
+                font-size: 1.2rem;
+                outline: none;
+                border: none;
+                background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+                cursor: pointer;
+                color: #fff;
+                text-transform: uppercase;
+                background-size: 200%;
+                transition: .5s;
+
+                &:hover {
+                    background-position: right;
+
+                }
+            }
+
+            @media screen and (max-width:1000px) {
+                width: 290px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+
+            justify-content: center;
+            margin-bottom: 100px;
+
+        }
+
+    }
+
+    @media screen and (max-width: 1050px) {
+
+        grid-gap: 5rem;
+
+    }
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+
+}
