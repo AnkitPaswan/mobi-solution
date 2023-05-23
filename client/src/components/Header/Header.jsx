@@ -8,11 +8,11 @@ import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import "./Header.scss";
-// import { toast } from "react-toastify";
+import Logo from "../../assests/logo.png";
 
 const Header = () => {
 
-  const [userName, setUserName] = useState();
+  // const [userName, setUserName] = useState();
   const [isLoggedIn, setIsLoggedin] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -44,17 +44,15 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // console.log('Auth state login', user.displayName)
-        // toast(user.displayName)
         setIsLoggedin(true);
         localStorage.setItem("user", user);
-        setUserName(user.displayName);
+        // setUserName(user.displayName);
         console.log(user);
       } else {
         setIsLoggedin(false);
         // console.log('Auth state logout');
         localStorage.removeItem("user");
-        setUserName("");
-        // toast("Logout Success")
+        // setUserName("");
       }
     });
   }
@@ -70,10 +68,11 @@ const Header = () => {
       <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
         <div className="header-content">
           <ul className="left">
-            <li onClick={() => navigate("/")}>Home</li>
+            <img src={Logo} alt="" onClick={() => navigate("/")} />
+            {/* <li onClick={() => navigate("/")}>Home</li>
             <li>About</li>
-            <li onClick={() => navigate("/")}>Categories</li>
-            <li>{userName ? `Welcome - ${userName}` : ""}</li>
+            <li onClick={() => navigate("/")}>Categories</li> */}
+            {/* <li>{userName ? `Welcome - ${userName}` : ""}</li> */}
           </ul>
           <div className="center" onClick={() => navigate("/")}>Mobi-Solution</div>
           <div className="right">

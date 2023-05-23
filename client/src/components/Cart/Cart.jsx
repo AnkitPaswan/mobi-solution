@@ -7,8 +7,8 @@ import { Context } from "../../utils/context";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import EmptyCart from "../../assests/empty_cart.svg";
 import { useNavigate } from "react-router-dom";
-
-
+import { loadStripe } from "@stripe/stripe-js";
+import { makePaymentRequest } from "../../utils/api";
 
 const Cart = ({ setShowCart }) => {
     const navigate = useNavigate();
@@ -30,8 +30,26 @@ const Cart = ({ setShowCart }) => {
     }, []);
 
 
+    const { cartItems, cartSubTotal } = useContext(Context);
 
-    const { cartItems, cartSubTotal } = useContext(Context)
+    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+
+    const handlePayment = async () => {
+
+        try {
+            const stripe = await stripePromise;
+            const res = await makePaymentRequest.post("/api/orders", { products: cartItems, });
+            console.log(res)
+            await stripe.redirectToCheckout({
+                sessionId: res.data.stripeSession.id
+            })
+
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
     return (
         <div className="cart-panel">
             <div className="opac-layer"></div>
@@ -57,7 +75,7 @@ const Cart = ({ setShowCart }) => {
                                 <span className="text">Subtotal:</span>
                                 <span className="text-total">&#8377;{cartSubTotal}</span>
                             </div>
-                            <div className="button">
+                            <div className="button" onClick={handlePayment}>
                                 <button className="checkout-cta">Checkout</button>
                             </div>
                         </div>

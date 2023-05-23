@@ -11,12 +11,11 @@ import Footer from "../Footer/Footer";
 
 const Home = () => {
 
-  const { categories, setCategories } = useContext(Context);
-  const { products, setProducts } = useContext(Context);
+  const { categories, setCategories, products, setProducts } = useContext(Context);
 
   useEffect(() => {
-    getCategories();
     getProducts();
+    getCategories();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

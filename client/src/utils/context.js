@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { createContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 export const Context = createContext();
+
 
 const Appcontext = ({ children }) => {
   const [categories, setCategories] = useState();
@@ -12,10 +14,15 @@ const Appcontext = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0,0);
-  },[location])
+    window.scrollTo(0, 0);
+  }, [location])
 
   useEffect(() => {
+    // localStorage.setItem('cartItem', JSON.stringify(cartItems));
+    // const cart = localStorage.getItem('cart');
+    // if (cart) {
+    //   setCartItems(JSON.parse(cart));
+    // }
 
     let count = 0;
     cartItems.map(item => count += item.attributes.quantity);
@@ -36,11 +43,21 @@ const Appcontext = ({ children }) => {
       items = [...items, product];
     }
     setCartItems(items);
+    toast.success("added a new product to cart", {
+      theme: "colored",
+      hideProgressBar: true,
+      position: "top-center"
+    });
   };
   const handleRemoveFromCart = (product) => {
     let items = [...cartItems];
     items = items.filter((p) => p.id !== product.id);
     setCartItems(items);
+    toast.success("removed a product to cart", {
+      theme: "colored",
+      hideProgressBar: true,
+      position: "top-center"
+    });
   };
   const handleCartProductQuantity = (type, product) => {
     let items = [...cartItems];

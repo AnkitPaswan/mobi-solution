@@ -1,102 +1,127 @@
 @import "../../css-config/mixins.scss";
 
-.single-product-main-content{
+.single-product-main-content {
     margin: 20px 0;
+
     @include md {
         margin: 45px 0;
     }
-    .layout{
+
+    .layout {
         max-width: calc(100% - 20px);
         margin: 0 auto;
-        @include md{
+
+        @include md {
             max-width: 1000px;
-            
+
         }
-        .single-product-page{
+
+        .single-product-page {
             display: flex;
             flex-direction: column;
-            @include md{
+
+            @include md {
                 justify-content: center;
                 flex-direction: row;
             }
-            .left{
+
+            .left {
                 width: 100%;
-                background-color:rgba(0,0,0,0.05);
+                background-color: rgba(0, 0, 0, 0.05);
                 flex-shrink: 0;
+
                 @include md {
                     width: 400px;
                     height: 400px;
                 }
-                img{
+
+                img {
                     width: 100%;
                     display: block;
                 }
             }
-            .right{
-                 display: flex;
-                 flex-direction: column;
-                 padding-top: 20px;
-                 @include md{
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+
+                @include md {
                     padding: 0 20px;
-                 }
-                 .name{
+                }
+
+                .name {
                     font-size: 20px;
                     line-height: 28px;
                     margin-bottom: 20px;
-                    @include md{
+
+                    @include md {
                         font-size: 18px;
                         line-height: 24px;
                     }
-                 }
-                 .price{
+                }
+
+                .price {
                     font-size: 24px;
                     line-height: 24px;
                     margin-bottom: 20px;
-                 }
-                 .desc{
+                }
+
+                .desc {
                     font-size: 14px;
                     line-height: 20px;
                     margin-bottom: 20px;
                     color: #6b6b6b;
+
                     @include md {
-                        font-size: 12px;
+                        font-size: 14px;
                         line-height: 22px;
                     }
-                 }
-                 .cart-buttons{
+                }
+
+                .cart-buttons {
                     display: flex;
-                    @include md{
+
+                    @include md {
                         margin-top: 20px;
                     }
-                    .quantity-buttons{
+
+                    .quantity-buttons {
                         width: fit-content;
                         display: flex;
-                        border: 2px solid rgba(0,0,0,0.2);
+                        border: 2px solid rgba(0, 0, 0, 0.2);
                         margin-right: 10px;
                         height: 50px;
-                        span{
+
+                        span {
                             font-size: 18px;
                             width: 40px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             cursor: pointer;
-                            &:nth-child(1){
-                                border-right: 2px solid rgba(0,0,0,0.2);
+
+                            &:nth-child(1) {
+                                border-right: 2px solid rgba(0, 0, 0, 0.2);
                             }
-                            &:nth-child(2){
+
+                            &:nth-child(2) {
                                 width: 60px;
                             }
-                            &:nth-child(3){
-                                border-left: 2px solid rgba(0,0,0,0.2);
+
+                            &:nth-child(3) {
+                                border-left: 2px solid rgba(0, 0, 0, 0.2);
                             }
                         }
                     }
-                    .add-to-cart-button{
+
+                    .add-to-cart-button {
                         outline: 0;
                         border: 0;
                         height: 50px;
                         width: 180px;
+                        // margin-right: 8px;
+                        gap: 4px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -106,37 +131,48 @@
                         background: #8e2de2;
                         border-bottom: 3px solid #6516aa;
                         flex-grow: 1;
-                        @include md{
+
+                        &:hover {
+                            background-color: #6516aa;
+                        }
+
+                        @include md {
                             flex-grow: unset;
                         }
                     }
-                 }
-                 .divider{
+
+                }
+
+                .divider {
                     margin: 20px 0;
                     height: 1px;
                     width: 100%;
-                    background-color: rgba(0,0,0,0.2);
+                    background-color: rgba(0, 0, 0, 0.2);
 
-                 }
-                 .info-item{
-                    .text-bold{
+                }
+
+                .info-item {
+                    .text-bold {
                         font-size: 18px;
                         font-weight: 500;
                         display: block;
-                        &:nth-child(1){
+
+                        &:nth-child(1) {
                             margin-bottom: 20px;
                         }
-                        span{
+
+                        span {
                             font-size: 16px;
                             font-weight: 400;
                             cursor: pointer;
                             color: #6b6b6b;
                         }
-                        svg{
+
+                        svg {
                             margin: 0 5px;
                         }
                     }
-                 }
+                }
             }
         }
     }

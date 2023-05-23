@@ -1,14 +1,16 @@
 import "./Banner.scss";
-import BannerImg from "../../../assests/banner.png";
+import BannerImg from "../../../assests/banner4a.png";
 
 const Banner = () => {
   return (
     <div className="hero-banner">
       <div className="content">
         <div className="text-content">
-          <h1>SALES</h1>
+          <h1>MOBILE
+            <span>Spare Parts Hub</span>
+          </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil optio velit maxime accusamus magni sed.
+            The biggest online website for mobile phone spare parts, tools & accessories with wholesale prices at your doorstep!.
           </p>
           <div className="ctas">
             <div className="banner-cta">Read More</div>

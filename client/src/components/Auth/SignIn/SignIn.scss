@@ -1,19 +1,16 @@
-// @import "../../css-config/mixins.scss";
-
-
 .container {
     // border-bottom-right-radius: 100% 40%;
     width: 100vh;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 7rem;
+    // grid-gap: 7rem;
     padding: 0 2rem;
     // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
 
     .img {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
 
         @media screen and (max-width: 900px) {

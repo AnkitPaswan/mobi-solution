@@ -9,7 +9,7 @@
     z-index: 99;
 
     @include md {
-        padding: 0 40;
+        padding: 0 40px;
     }
 
     .header-content {
@@ -33,11 +33,20 @@
                 display: flex;
             }
 
-            li {
-                font-size: 14px;
-                font-weight: 600;
-                text-transform: uppercase;
+            // li {
+            //     font-size: 14px;
+            //     font-weight: 600;
+            //     text-transform: uppercase;
+            //     cursor: pointer;
+            // }
+
+            img {
+                width: 80px;
                 cursor: pointer;
+
+                @include md {
+                    width: 80px;
+                }
             }
         }
 
@@ -50,7 +59,7 @@
                 font-size: 34px;
                 position: absolute;
                 left: 50%;
-                transform: translate(-50%);
+                transform: translate(-60%);
             }
         }
 
@@ -60,7 +69,7 @@
             gap: 20px;
 
             @include md {
-                gap: 25px;
+                gap: 30px;
             }
 
             svg {
