@@ -24,4 +24,5 @@ const Category = ({ categories }) => {
     );
 };
 
+
 export default Category;

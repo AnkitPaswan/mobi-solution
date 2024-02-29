@@ -17,4 +17,5 @@ const Product = ({ id, data }) => {
     );
 };
 
+
 export default Product;
